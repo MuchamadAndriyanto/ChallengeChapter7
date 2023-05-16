@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "473073040693",
+    "project_id": "challenge-chapter-6-609e4",
+    "storage_bucket": "challenge-chapter-6-609e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473073040693:android:bfccc94641a83c4993e07c",
+        "android_client_info": {
+          "package_name": "com.example.bismillahjadi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "473073040693-fn13nk453tgpbd7fc2tph2kf9cea6hc6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bismillahjadi",
+            "certificate_hash": "1d0bfa9032581c81a530f450736a735e29830378"
+          }
+        },
+        {
+          "client_id": "473073040693-v81famp72b7j6r2qcmugadfhq87a0du7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDTdyLW3gWDuYE_lQ7moCV10aKcWGf9Ik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473073040693-v81famp72b7j6r2qcmugadfhq87a0du7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
