@@ -7,26 +7,27 @@ import androidx.lifecycle.ViewModel
 import com.example.bismillahjadi.model.ListMovie
 import com.example.bismillahjadi.model.Result
 import com.example.bismillahjadi.network.ApiClient
+import com.example.bismillahjadi.network.ApiService
+import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class ListMovieTopViewModel: ViewModel(){
-    private val movietoprat: MutableLiveData<List<com.example.bismillahjadi.model.Result>> by lazy {
-        MutableLiveData<List<com.example.bismillahjadi.model.Result>>().also {
-            getAllMovietoprated()
-        }
+@HiltViewModel
+class ListMovieTopViewModel @Inject constructor(private var api : ApiService): ViewModel(){
+
+    var livedatamovie : MutableLiveData<List<Result>> = MutableLiveData()
+
+    fun getlivedatamovie(): MutableLiveData<List<Result>> {
+        return livedatamovie
     }
 
-    fun getMovies(): LiveData<List<Result>> {
-        return movietoprat
-    }
-
-    private fun getAllMovietoprated() {
-        ApiClient.instance.allMoviesTopRated().enqueue(object : Callback<ListMovie> {
+    fun getAllMovieTop() {
+        api.allMoviesTopRated().enqueue(object : Callback<ListMovie> {
             override fun onResponse(call: Call<ListMovie>, response: Response<ListMovie>) {
 
-                movietoprat.value = response.body()?.results
+                livedatamovie.value = response.body()?.results
 
             }
 

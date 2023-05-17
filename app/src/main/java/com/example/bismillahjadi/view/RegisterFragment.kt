@@ -12,7 +12,9 @@ import androidx.navigation.Navigation
 import com.example.bismillahjadi.R
 import com.example.bismillahjadi.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
     lateinit var binding: FragmentRegisterBinding

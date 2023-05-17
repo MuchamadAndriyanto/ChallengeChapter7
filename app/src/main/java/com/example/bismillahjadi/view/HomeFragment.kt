@@ -7,24 +7,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bismillahjadi.R
 import com.example.bismillahjadi.databinding.FragmentHomeBinding
 import com.example.bismillahjadi.view.adapter.MovieTopAdapter
 import com.example.bismillahjadi.viewmodel.ListMovieTopViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     lateinit var binding: FragmentHomeBinding
     lateinit var pref: SharedPreferences
-    private val ViewModel: ListMovieTopViewModel by viewModels()
+    private lateinit var movieadapter: MovieTopAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //getDataMovie()
+//        setViewModel()
+
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,15 +52,19 @@ class HomeFragment : Fragment() {
 
 
     }
-    override fun onStart(){
+    override fun onStart() {
         super.onStart()
 
-        ViewModel.getMovies().observe(requireActivity()) {
-            val adapter = MovieTopAdapter(it)
+        val viewModel = ViewModelProvider(this).get(ListMovieTopViewModel::class.java)
+        viewModel.getlivedatamovie().observe(this) {
+            movieadapter = MovieTopAdapter(it)
             val layoutManager = GridLayoutManager(context,2)
             binding.rvTopRated.layoutManager = layoutManager
-            binding.rvTopRated.adapter = adapter
+            binding.rvTopRated.adapter = MovieTopAdapter(it)
         }
+
+        viewModel.getAllMovieTop()
+
 
     }
 }

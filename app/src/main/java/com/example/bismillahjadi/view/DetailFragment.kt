@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.bismillahjadi.databinding.FragmentDetailBinding
 import com.example.bismillahjadi.model.DetailMovieTop
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailFragment : Fragment() {
 
     lateinit var binding: FragmentDetailBinding

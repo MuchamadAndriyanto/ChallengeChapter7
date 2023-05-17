@@ -12,7 +12,9 @@ import androidx.navigation.Navigation
 import com.example.bismillahjadi.R
 import com.example.bismillahjadi.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
     lateinit var binding: FragmentProfileBinding

@@ -15,8 +15,9 @@ import com.example.bismillahjadi.MainActivity
 import com.example.bismillahjadi.R
 import com.example.bismillahjadi.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
-
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     lateinit var binding: FragmentLoginBinding
