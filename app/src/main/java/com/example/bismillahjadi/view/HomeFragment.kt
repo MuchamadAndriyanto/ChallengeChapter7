@@ -1,5 +1,10 @@
+@file:Suppress("RedundantOverride", "UnusedImport", "UnusedImport",
+    "UnusedImport"
+)
+
 package com.example.bismillahjadi.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -17,11 +22,16 @@ import com.example.bismillahjadi.view.adapter.MovieTopAdapter
 import com.example.bismillahjadi.viewmodel.ListMovieTopViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("RedundantNullableReturnType", "RedundantNullableReturnType",
+    "RedundantNullableReturnType", "RedundantSuppression", "RedundantSuppression",
+    "RedundantSuppression", "RedundantSuppression", "RedundantSuppression", "RedundantSuppression",
+    "RedundantSuppression"
+)
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
-    lateinit var binding: FragmentHomeBinding
-    lateinit var pref: SharedPreferences
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var pref: SharedPreferences
     private lateinit var movieadapter: MovieTopAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +49,7 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         pref = requireActivity().getSharedPreferences("Register", Context.MODE_PRIVATE)
         val username = pref.getString("username", "username")
@@ -55,7 +66,7 @@ class HomeFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        val viewModel = ViewModelProvider(this).get(ListMovieTopViewModel::class.java)
+        val viewModel = ViewModelProvider(this)[ListMovieTopViewModel::class.java]
         viewModel.getlivedatamovie().observe(this) {
             movieadapter = MovieTopAdapter(it)
             val layoutManager = GridLayoutManager(context,2)

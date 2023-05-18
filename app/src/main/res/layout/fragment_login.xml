@@ -6,29 +6,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/signin_screen"
-    tools:context=".view.LoginFragment">
+    tools:context=".view.LoginFragment"
+    tools:ignore="Overdraw">
 
-    <com.google.android.material.textview.MaterialTextView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/btnIndo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginBottom="45dp"
-        android:text="Indonesia"
-        android:textColor="@color/red"
+        android:src="@drawable/indo"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/inputEmail"
         app:layout_constraintLeft_toLeftOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,RtlHardcoded" />
 
-    <com.google.android.material.textview.MaterialTextView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/btnEng"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="25dp"
         android:layout_marginBottom="45dp"
-        android:text="English"
-        android:textColor="@color/biru"
+        android:src="@drawable/english"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/inputEmail"
         app:layout_constraintEnd_toEndOf="parent"

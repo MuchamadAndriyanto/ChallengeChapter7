@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">BismillahJadi</string>
-    <string name="LOGIN">GABUNG</string>
+    <string name="LOGIN" tools:keep="@string/LOGIN">GABUNG</string>
     <string name="Input_Email">Masukan_Email</string>
     <string name="Input_Password">Masukan_Password</string>
     <string name="Login">Gabung</string>
-    <string name="REGISTER">DAFTAR</string>
+    <string name="REGISTER" tools:keep="@string/REGISTER">DAFTAR</string>
     <string name="Username">Nama_Pengguna</string>
     <string name="Email">Email</string>
     <string name="Password">Kata_Sandi</string>

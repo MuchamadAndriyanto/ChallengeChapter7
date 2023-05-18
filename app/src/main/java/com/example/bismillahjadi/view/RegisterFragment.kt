@@ -17,14 +17,14 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
-    lateinit var binding: FragmentRegisterBinding
-    lateinit var sharedpref: SharedPreferences
-    lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var binding: FragmentRegisterBinding
+    private lateinit var sharedpref: SharedPreferences
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentRegisterBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -41,7 +41,7 @@ class RegisterFragment : Fragment() {
 
     }
 
-    fun register() {
+    private fun register() {
         val username = binding.usernameEditText.text.toString()
         val email = binding.emailEditText.text.toString()
         val pass = binding.passwordEditText.text.toString()

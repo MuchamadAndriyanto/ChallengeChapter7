@@ -1,5 +1,6 @@
 package com.example.bismillahjadi.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -17,17 +18,20 @@ import com.example.bismillahjadi.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
+@Suppress(
+    "RedundantExplicitType", "SameParameterValue", "SameParameterValue"
+)
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
 
-    lateinit var binding: FragmentLoginBinding
-    lateinit var sharedpref: SharedPreferences
-    lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var binding: FragmentLoginBinding
+    private lateinit var sharedpref: SharedPreferences
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -56,7 +60,7 @@ class LoginFragment : Fragment() {
 
     }
 
-    fun login(){
+    private fun login(){
         val email = binding.emailEditText.text.toString()
         val password = binding.passwordEdiText.text.toString()
 
@@ -73,11 +77,12 @@ class LoginFragment : Fragment() {
 
     }
 
+    @SuppressLint("AppBundleLocaleChanges")
     private fun setIndonesia(indonesia: String) {
-        var locale : Locale = Locale("id")
+        val locale : Locale = Locale("id")
         Locale.setDefault(locale)
 
-        var config: Configuration = Configuration()
+        val config: Configuration = Configuration()
         config.locale = locale
 
         val res = resources
@@ -87,10 +92,10 @@ class LoginFragment : Fragment() {
 
     }
     private fun setEnglish(english: String) {
-        var locale : Locale = Locale("eng")
+        val locale : Locale = Locale("eng")
         Locale.setDefault(locale)
 
-        var config: Configuration = Configuration()
+        val config: Configuration = Configuration()
         config.locale = locale
 
         val res = resources

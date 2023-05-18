@@ -17,15 +17,15 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
-    lateinit var binding: FragmentProfileBinding
-    lateinit var sharedpref : SharedPreferences
-    lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var binding: FragmentProfileBinding
+    private lateinit var sharedpref : SharedPreferences
+    private lateinit var firebaseAuth: FirebaseAuth
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(layoutInflater,container,false)
         return binding.root
@@ -39,7 +39,7 @@ class ProfileFragment : Fragment() {
         binding.btnUpdate.setOnClickListener {
             val username = binding.usernameUpdateText.text.toString()
 
-            var upusername = sharedpref.edit()
+            val upusername = sharedpref.edit()
             upusername.putString("username", username)
             upusername.apply()
             firebaseAuth = FirebaseAuth.getInstance()

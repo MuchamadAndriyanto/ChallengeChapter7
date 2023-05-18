@@ -1,12 +1,10 @@
 package com.example.bismillahjadi.viewmodel
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.bismillahjadi.model.ListMovie
 import com.example.bismillahjadi.model.Result
-import com.example.bismillahjadi.network.ApiClient
 import com.example.bismillahjadi.network.ApiService
 import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call

@@ -1,3 +1,8 @@
+@file:Suppress("SpellCheckingInspection", "SpellCheckingInspection", "SpellCheckingInspection",
+    "SpellCheckingInspection", "RedundantSuppression", "RedundantSuppression",
+    "RedundantSuppression", "RedundantSuppression", "RedundantSuppression", "RedundantSuppression"
+)
+
 package com.example.bismillahjadi.network
 
 import dagger.Module
@@ -10,12 +15,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+@Suppress("SpellCheckingInspection")
 @Module
 @InstallIn(SingletonComponent::class)
 
 object ApiClient {
     private const val  BASE_URL ="https://api.themoviedb.org/"
-    const val API_KEY = "5eadf04193e2a9bcea8a8e8f4cfa89e2"
 
     private  val logging : HttpLoggingInterceptor
         get(){
@@ -40,12 +45,4 @@ object ApiClient {
     fun providerNewsApi(retrofit: Retrofit) : ApiService =
         retrofit.create(ApiService::class.java)
 
-
-//    val instance : ApiService by lazy {
-//        val retrofit= Retrofit.Builder()
-//            .baseUrl(BASE_URL)
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build()
-//        retrofit.create(ApiService::class.java)
-//    }
 }

@@ -11,10 +11,9 @@ import com.example.bismillahjadi.databinding.ItemListmovietopBinding
 import com.example.bismillahjadi.model.DetailMovieTop
 import com.example.bismillahjadi.model.Result
 
-class MovieTopAdapter(var listMovieTop : List<Result>) : RecyclerView.Adapter<MovieTopAdapter.ViewHolder>() {
-    class ViewHolder(var binding: ItemListmovietopBinding) : RecyclerView.ViewHolder(binding.root) {
-
-    }
+@Suppress("RemoveRedundantQualifierName")
+class MovieTopAdapter(private var listMovieTop : List<Result>) : RecyclerView.Adapter<MovieTopAdapter.ViewHolder>() {
+    class ViewHolder(var binding: ItemListmovietopBinding) : RecyclerView.ViewHolder(binding.root)
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,11 +27,11 @@ class MovieTopAdapter(var listMovieTop : List<Result>) : RecyclerView.Adapter<Mo
         Glide.with(holder.itemView).load("https://image.tmdb.org/t/p/w780${listMovieTop[position].backdropPath}").into(holder.binding.imgView)
 
         holder.binding.detailToprated.setOnClickListener {
-            var imagepath = listMovieTop[position].backdropPath
-            var title = listMovieTop[position].title
-            var date = listMovieTop[position].releaseDate
-            var overview = listMovieTop[position].overview
-            var detail = DetailMovieTop(imagepath,title,date, overview)
+            val imagepath = listMovieTop[position].backdropPath
+            val title = listMovieTop[position].title
+            val date = listMovieTop[position].releaseDate
+            val overview = listMovieTop[position].overview
+            val detail = DetailMovieTop(imagepath,title,date, overview)
 
             val data = Bundle()
             data.putParcelable("data_movietop",detail)

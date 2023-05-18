@@ -1,3 +1,8 @@
+@file:Suppress("RedundantNullableReturnType", "RedundantNullableReturnType",
+    "RedundantNullableReturnType", "RedundantNullableReturnType", "RedundantSuppression",
+    "RedundantSuppression", "RedundantSuppression", "RedundantSuppression"
+)
+
 package com.example.bismillahjadi.view
 
 import android.os.Bundle
@@ -10,10 +15,11 @@ import com.example.bismillahjadi.databinding.FragmentDetailBinding
 import com.example.bismillahjadi.model.DetailMovieTop
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("RedundantNullableReturnType")
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
 
-    lateinit var binding: FragmentDetailBinding
+    private lateinit var binding: FragmentDetailBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
