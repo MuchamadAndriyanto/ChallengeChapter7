@@ -5,18 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.bismillahjadi.databinding.FragmentFavoritBinding
-import com.example.bismillahjadi.room.FavoritDatabase
 import com.example.bismillahjadi.view.adapter.FavoritAdapter
+import com.example.bismillahjadi.viewmodel.FavoritViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class FavoritFragment : Fragment() {
     private lateinit var binding: FragmentFavoritBinding
-    private var fdMovie: FavoritDatabase? = null
+    private lateinit var favoriteAdapter: FavoritAdapter
 
 
     override fun onCreateView(
@@ -30,25 +29,20 @@ class FavoritFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fdMovie = FavoritDatabase.getInstance(requireContext())
-        getDataFav()
-
 
     }
+    override fun onStart() {
+        super.onStart()
 
-    private fun getDataFav() {
-
-        binding.rvFavMovie.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        GlobalScope.launch {
-            val listdata = fdMovie?.favDao()!!.getAllFilmFavorites()
-            activity?.runOnUiThread {
-                listdata.observe(viewLifecycleOwner) {
-                    //set adapter
-                    binding.rvFavMovie.adapter = FavoritAdapter(it)
-                }
-            }
+        val viewModel = ViewModelProvider(this)[FavoritViewModel::class.java]
+        viewModel.getFavoriteMovie().observe(this) {
+            favoriteAdapter = FavoritAdapter(it)
+            val layoutManager = GridLayoutManager(context,2)
+            binding.rvFavMovie.layoutManager = layoutManager
+            binding.rvFavMovie.adapter = FavoritAdapter(it)
         }
 
+
     }
+
 }

@@ -40,7 +40,9 @@ android {
         viewBinding true
     }
     lint{
-        lintConfig file ("lint.xml")
+        disable 'TyphographyQuotes'
+        lintConfig file("lint.xml")
+        disable 'Typo'
     }
 }
 

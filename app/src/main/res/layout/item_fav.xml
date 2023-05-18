@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/imgView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
             android:contentDescription="TODO"
             android:src="@drawable/ic_launcher_background"
@@ -38,24 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-
     </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <CheckBox
-            android:id="@+id/cbFav"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:button="@drawable/baseline_delete_24"
-            tools:ignore="ObsoleteLayoutParam,RtlHardcoded" />
-
-    </RelativeLayout>
 
 
 </com.google.android.material.card.MaterialCardView>

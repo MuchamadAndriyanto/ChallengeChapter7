@@ -13,7 +13,7 @@ interface FavoritDao {
     fun getAllFilmFavorites() : LiveData<List<MovieFavorit>>
 
     @Insert
-    suspend fun insertFilmFavorites(filmFavorites: MovieFavorit) : Long
+    suspend fun insertFilmFavorites(filmFavorites: MovieFavorit)
 
     @Delete
     suspend fun deleteFilmFavorites(filmFavorites: MovieFavorit) : Int

@@ -1,36 +1,25 @@
 package com.example.bismillahjadi.viewmodel
 
-import android.annotation.SuppressLint
-import android.content.Context
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.bismillahjadi.network.ApiService
+import androidx.lifecycle.viewModelScope
 import com.example.bismillahjadi.room.FavoritDao
-import com.example.bismillahjadi.room.FavoritDatabase
 import com.example.bismillahjadi.room.MovieFavorit
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class FavoritViewModel@Inject constructor(var api : ApiService) : ViewModel() {
-    private var movefavDao: FavoritDao? = null
-    private var movefavDb: FavoritDatabase? = null
+class FavoritViewModel @Inject constructor(private val favoriteDAO: FavoritDao): ViewModel( ){
 
-    @SuppressLint("StaticFieldLeak")
-    lateinit var context: Context
+    //insert favorite movie
+    suspend fun insertFavoriteMovie( favorite: MovieFavorit) = favoriteDAO.insertFilmFavorites(favorite)
 
-
-    private lateinit var liveDataListfav: MutableLiveData<List<MovieFavorit>>
-
-    init {
-        movefavDb = FavoritDatabase.getInstance(context)
-        movefavDao = movefavDb!!.favDao()
+    fun insertMovie(id:Int,title:String,date:String,image:String){
+        viewModelScope.launch {
+            val movie = MovieFavorit(id,title,date,image)
+            favoriteDAO.insertFilmFavorites(movie)
+        }
     }
-
-
-    fun getliveDataMoviefav(): MutableLiveData<List<MovieFavorit>> {
-        return liveDataListfav
-    }
-
+    fun getFavoriteMovie() = favoriteDAO.getAllFilmFavorites()
 }
 

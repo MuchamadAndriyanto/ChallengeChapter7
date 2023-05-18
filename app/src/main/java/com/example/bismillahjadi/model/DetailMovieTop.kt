@@ -5,6 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class DetailMovieTop(
+    val id : Int,
     val imagepath: String,
     val title: String,
     val date: String,

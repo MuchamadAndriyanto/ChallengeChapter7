@@ -10,7 +10,8 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class MovieFavorit(
     @PrimaryKey
-    val id : Int?,
+    @ColumnInfo(name = "id")
+    val id : Int,
     @ColumnInfo(name = "title")
     var title : String,
     @ColumnInfo(name = "date")

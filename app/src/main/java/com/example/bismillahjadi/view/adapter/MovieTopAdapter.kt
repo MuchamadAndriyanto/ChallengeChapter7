@@ -27,11 +27,12 @@ class MovieTopAdapter(private var listMovieTop : List<Result>) : RecyclerView.Ad
         Glide.with(holder.itemView).load("https://image.tmdb.org/t/p/w780${listMovieTop[position].backdropPath}").into(holder.binding.imgView)
 
         holder.binding.detailToprated.setOnClickListener {
+            val id = listMovieTop[position].id
             val imagepath = listMovieTop[position].backdropPath
             val title = listMovieTop[position].title
             val date = listMovieTop[position].releaseDate
             val overview = listMovieTop[position].overview
-            val detail = DetailMovieTop(imagepath,title,date, overview)
+            val detail = DetailMovieTop(id,imagepath,title,date, overview)
 
             val data = Bundle()
             data.putParcelable("data_movietop",detail)
