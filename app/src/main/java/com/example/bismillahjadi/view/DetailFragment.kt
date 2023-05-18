@@ -1,6 +1,6 @@
 @file:Suppress("RedundantNullableReturnType", "RedundantNullableReturnType",
     "RedundantNullableReturnType", "RedundantNullableReturnType", "RedundantSuppression",
-    "RedundantSuppression", "RedundantSuppression", "RedundantSuppression"
+    "RedundantSuppression", "RedundantSuppression", "RedundantSuppression", "unused"
 )
 
 package com.example.bismillahjadi.view
@@ -15,7 +15,6 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.bismillahjadi.databinding.FragmentDetailBinding
 import com.example.bismillahjadi.model.DetailMovieTop
-import com.example.bismillahjadi.model.Result
 import com.example.bismillahjadi.room.FavoritDao
 import com.example.bismillahjadi.room.FavoritDatabase
 import com.example.bismillahjadi.room.MovieFavorit
@@ -23,13 +22,13 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 
-@Suppress("DEPRECATION")
+@Suppress("DEPRECATION", "DeferredResultUnused", "DeferredResultUnused", "unused", "unused")
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
-    private var moveDao : FavoritDao?=null
-    private var moveDb : FavoritDatabase?=null
+    private var favDao : FavoritDao?=null
+    private var favDb : FavoritDatabase?=null
 
 
     override fun onCreateView(
@@ -44,8 +43,8 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        moveDb= FavoritDatabase.getInstance(requireContext())
-        moveDao = moveDb?.favDao()
+        favDb= FavoritDatabase.getInstance(requireContext())
+        favDao = favDb?.favDao()
 
 
         // pengambilan data
@@ -62,7 +61,7 @@ class DetailFragment : Fragment() {
             .into(binding.ivDetailGambar)
 
 
-        binding.favoritesBtn.setOnClickListener {
+        binding.btnFav.setOnClickListener {
 
             val getFav = arguments?.getParcelable<DetailMovieTop>("data_movietop") as DetailMovieTop
             val title = getFav.title
@@ -71,9 +70,9 @@ class DetailFragment : Fragment() {
 
             GlobalScope.async {
                 val favfilm =  MovieFavorit(0,title,date,gambar)
-                val result =moveDb?.favDao()?.insertFilmFavorites(favfilm)
+                val result =favDb?.favDao()?.insertFilmFavorites(favfilm)
                 activity?.runOnUiThread {
-                    Toast.makeText(context, "Item added to Favorites", Toast.LENGTH_LONG)
+                    Toast.makeText(context, "Berhasil Menambahkan Item Ke Favorite", Toast.LENGTH_LONG)
                         .show()
                     Log.d("tes2", result.toString())
                     Log.d("tes3", title)

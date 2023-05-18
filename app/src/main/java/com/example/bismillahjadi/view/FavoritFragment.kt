@@ -1,13 +1,11 @@
 package com.example.bismillahjadi.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bismillahjadi.R
 import com.example.bismillahjadi.databinding.FragmentFavoritBinding
 import com.example.bismillahjadi.room.FavoritDatabase
 import com.example.bismillahjadi.view.adapter.FavoritAdapter
@@ -17,7 +15,7 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class FavoritFragment : Fragment() {
-    lateinit var binding: FragmentFavoritBinding
+    private lateinit var binding: FragmentFavoritBinding
     private var fdMovie: FavoritDatabase? = null
 
 

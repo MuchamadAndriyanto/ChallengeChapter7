@@ -25,7 +25,7 @@ import java.util.Locale
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
-    private lateinit var sharedpref: SharedPreferences
+    // --Commented out by Inspection (18/05/2023 19:47):private lateinit var sharedpref: SharedPreferences
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreateView(
