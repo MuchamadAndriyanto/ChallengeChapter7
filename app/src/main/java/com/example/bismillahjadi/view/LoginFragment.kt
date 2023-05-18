@@ -78,7 +78,7 @@ class LoginFragment : Fragment() {
     }
 
     @SuppressLint("AppBundleLocaleChanges")
-    private fun setIndonesia(indonesia: String) {
+    private fun setIndonesia(ignoredIndonesia: String) {
         val locale : Locale = Locale("id")
         Locale.setDefault(locale)
 
@@ -91,7 +91,7 @@ class LoginFragment : Fragment() {
         requireActivity().startActivity(intent)
 
     }
-    private fun setEnglish(english: String) {
+    private fun setEnglish(ignoredEnglish: String) {
         val locale : Locale = Locale("eng")
         Locale.setDefault(locale)
 

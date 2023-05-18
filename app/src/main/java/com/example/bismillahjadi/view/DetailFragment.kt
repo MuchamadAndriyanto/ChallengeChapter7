@@ -6,32 +6,47 @@
 package com.example.bismillahjadi.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.bismillahjadi.databinding.FragmentDetailBinding
 import com.example.bismillahjadi.model.DetailMovieTop
+import com.example.bismillahjadi.model.Result
+import com.example.bismillahjadi.room.FavoritDao
+import com.example.bismillahjadi.room.FavoritDatabase
+import com.example.bismillahjadi.room.MovieFavorit
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 
-@Suppress("RedundantNullableReturnType")
+@Suppress("DEPRECATION")
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
+    private var moveDao : FavoritDao?=null
+    private var moveDb : FavoritDatabase?=null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentDetailBinding.inflate(layoutInflater,container,false)
+        binding = FragmentDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        moveDb= FavoritDatabase.getInstance(requireContext())
+        moveDao = moveDb?.favDao()
+
 
         // pengambilan data
         val list = arguments?.getParcelable<DetailMovieTop>("data_movietop") as DetailMovieTop
@@ -43,8 +58,29 @@ class DetailFragment : Fragment() {
         binding.tvNamaMovie.text = title
         binding.tvDate.text = date
         binding.tvOverview.text = overview
-        Glide.with(view.context).load("https://image.tmdb.org/t/p/w780${imagepath}").into(binding.ivDetailGambar)
+        Glide.with(view.context).load("https://image.tmdb.org/t/p/w780${imagepath}")
+            .into(binding.ivDetailGambar)
 
+
+        binding.favoritesBtn.setOnClickListener {
+
+            val getFav = arguments?.getParcelable<DetailMovieTop>("data_movietop") as DetailMovieTop
+            val title = getFav.title
+            val date = getFav.date
+            val gambar = getFav.imagepath
+
+            GlobalScope.async {
+                val favfilm =  MovieFavorit(0,title,date,gambar)
+                val result =moveDb?.favDao()?.insertFilmFavorites(favfilm)
+                activity?.runOnUiThread {
+                    Toast.makeText(context, "Item added to Favorites", Toast.LENGTH_LONG)
+                        .show()
+                    Log.d("tes2", result.toString())
+                    Log.d("tes3", title)
+                }
+
+            }
+
+        }
     }
-
 }

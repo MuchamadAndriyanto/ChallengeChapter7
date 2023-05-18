@@ -1,4 +1,4 @@
-@file:Suppress("RedundantOverride", "UnusedImport", "UnusedImport",
+@file:Suppress("RedundantOverride",
     "UnusedImport"
 )
 
@@ -22,11 +22,6 @@ import com.example.bismillahjadi.view.adapter.MovieTopAdapter
 import com.example.bismillahjadi.viewmodel.ListMovieTopViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@Suppress("RedundantNullableReturnType", "RedundantNullableReturnType",
-    "RedundantNullableReturnType", "RedundantSuppression", "RedundantSuppression",
-    "RedundantSuppression", "RedundantSuppression", "RedundantSuppression", "RedundantSuppression",
-    "RedundantSuppression"
-)
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
@@ -59,6 +54,10 @@ class HomeFragment : Fragment() {
         //Profile
         binding.btnProfile.setOnClickListener {
             Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_profileFragment)
+        }
+
+        binding.btnFavorit.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.action_homeFragment_to_favoritFragment)
         }
 
 

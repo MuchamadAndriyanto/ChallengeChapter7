@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoritFragment"
+            app:destination="@id/favoritFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -54,5 +57,14 @@
         android:id="@+id/detailFragment"
         android:name="com.example.bismillahjadi.view.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_favoritFragment"
+            app:destination="@id/favoritFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritFragment"
+        android:name="com.example.bismillahjadi.view.FavoritFragment"
+        android:label="fragment_favorit"
+        tools:layout="@layout/fragment_favorit" />
 </navigation>

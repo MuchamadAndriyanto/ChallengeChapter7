@@ -45,6 +45,12 @@ android {
 }
 
 dependencies {
+
+    implementation "androidx.fragment:fragment-ktx"
+
+    //data store
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+
     implementation "com.google.dagger:hilt-android:2.45"
     kapt "com.google.dagger:hilt-android-compiler:2.45"
 
@@ -78,6 +84,8 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
     //add recyclerview
     implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     //firebase
     implementation 'com.google.firebase:firebase-auth:21.1.0'
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.7'
