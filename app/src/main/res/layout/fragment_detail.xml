@@ -10,7 +10,7 @@
         android:id="@+id/tvDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:text="@string/DETAIL"
         android:textSize="34sp"
         android:textStyle="bold" />

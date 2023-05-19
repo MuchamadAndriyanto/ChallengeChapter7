@@ -16,7 +16,7 @@ class ModuleApp {
     @Singleton
     @Provides
     fun provideDatabase(app: Application):FavoritDatabase {
-        return Room.databaseBuilder(app, FavoritDatabase::class.java, "favorite_database")
+        return Room.databaseBuilder(app, FavoritDatabase::class.java, "favorit_db")
             .fallbackToDestructiveMigration()
             .build()
     }

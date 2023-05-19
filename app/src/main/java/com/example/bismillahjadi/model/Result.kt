@@ -3,8 +3,17 @@ package com.example.bismillahjadi.model
 
 import com.google.gson.annotations.SerializedName
 
+@Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
+    "RedundantSuppression", "RedundantSuppression", "RedundantSuppression", "RedundantSuppression",
+    "RedundantSuppression", "RedundantSuppression", "RedundantSuppression", "RedundantSuppression",
+    "RedundantSuppression", "RedundantSuppression", "RedundantSuppression", "RedundantSuppression",
+    "RedundantSuppression", "RedundantSuppression", "RedundantSuppression", "RedundantSuppression",
+    "RedundantSuppression"
+)
 data class Result(
-    @SerializedName("adult")
+    @Suppress("unused", "unused", "unused", "unused", "unused", "unused", "unused", "unused",
+        "unused"
+    ) @SerializedName("adult")
     val adult: Boolean,
     @SerializedName("backdrop_path")
     val backdropPath: String,

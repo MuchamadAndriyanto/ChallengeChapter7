@@ -23,9 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class DetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
-    lateinit var favoritViewModel: FavoritViewModel
-
-
+    private lateinit var favViewModel: FavoritViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +37,7 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        favoritViewModel = ViewModelProvider(this).get(FavoritViewModel::class.java)
+        favViewModel = ViewModelProvider(this)[FavoritViewModel::class.java]
 
 
 
@@ -59,8 +57,8 @@ class DetailFragment : Fragment() {
 
 
         binding.btnFav.setOnClickListener {
-            favoritViewModel.insertMovie(id, title, date, imagepath)
-            Toast.makeText(context, "Berhasil di tambah", Toast.LENGTH_SHORT).show()
+            favViewModel.insertMovie(id, title, date, imagepath)
+            Toast.makeText(context, "Berhasil Menambahkan Item Ke Favorit", Toast.LENGTH_SHORT).show()
         }
     }
 }

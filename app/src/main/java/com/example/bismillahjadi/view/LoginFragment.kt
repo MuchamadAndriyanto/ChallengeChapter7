@@ -1,3 +1,5 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused", "RedundantSuppression")
+
 package com.example.bismillahjadi.view
 
 import android.annotation.SuppressLint

@@ -20,5 +20,6 @@
     <string name="Full_Name">Nama_Lengkap</string>
     <string name="Date_of_Birth">Tanggal_Lahir</string>
     <string name="Address">Alamat</string>
+    <string name="FAVORITE">FAVORIT</string>
 
 </resources>

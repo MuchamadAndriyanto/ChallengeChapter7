@@ -6,16 +6,19 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 
+@Suppress("unused", "unused", "unused", "unused", "RedundantSuppression", "RedundantSuppression",
+    "RedundantSuppression", "RedundantSuppression"
+)
 @Dao
 interface FavoritDao {
 
     @Query("SELECT * FROM MovieFavorit")
-    fun getAllFilmFavorites() : LiveData<List<MovieFavorit>>
+    fun getAllMovieFavorit() : LiveData<List<MovieFavorit>>
 
     @Insert
-    suspend fun insertFilmFavorites(filmFavorites: MovieFavorit)
+    suspend fun insertFilmFavorit(filmFavorites: MovieFavorit)
 
     @Delete
-    suspend fun deleteFilmFavorites(filmFavorites: MovieFavorit) : Int
+    suspend fun deleteFilmFavorit(filmFavorites: MovieFavorit) : Int
 
 }

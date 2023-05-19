@@ -3,14 +3,15 @@ package com.example.bismillahjadi.model
 import com.google.gson.annotations.SerializedName
 
 
+@Suppress("RedundantSuppression", "RedundantSuppression", "RedundantSuppression", "unused")
 data class ListMovie(
-    @SerializedName("page")
+    @Suppress("unused", "unused", "unused") @SerializedName("page")
     val page: Int,
     @SerializedName("results")
     val results: List<Result>,
-    @SerializedName("total_pages")
+    @Suppress("unused", "unused") @SerializedName("total_pages")
    val totalPages: Int,
-    @SerializedName("total_results")
+    @Suppress("unused") @SerializedName("total_results")
     val totalResults: Int
 
 )

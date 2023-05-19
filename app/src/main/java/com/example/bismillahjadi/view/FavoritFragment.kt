@@ -12,10 +12,11 @@ import com.example.bismillahjadi.view.adapter.FavoritAdapter
 import com.example.bismillahjadi.viewmodel.FavoritViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+@Suppress("RedundantOverride")
 @AndroidEntryPoint
 class FavoritFragment : Fragment() {
     private lateinit var binding: FragmentFavoritBinding
-    private lateinit var favoriteAdapter: FavoritAdapter
+    private lateinit var favAdapter: FavoritAdapter
 
 
     override fun onCreateView(
@@ -35,8 +36,8 @@ class FavoritFragment : Fragment() {
         super.onStart()
 
         val viewModel = ViewModelProvider(this)[FavoritViewModel::class.java]
-        viewModel.getFavoriteMovie().observe(this) {
-            favoriteAdapter = FavoritAdapter(it)
+        viewModel.getFavoritMovie().observe(this) {
+            favAdapter = FavoritAdapter(it)
             val layoutManager = GridLayoutManager(context,2)
             binding.rvFavMovie.layoutManager = layoutManager
             binding.rvFavMovie.adapter = FavoritAdapter(it)

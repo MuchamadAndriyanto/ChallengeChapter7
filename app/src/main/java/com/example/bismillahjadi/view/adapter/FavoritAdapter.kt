@@ -7,7 +7,8 @@ import com.bumptech.glide.Glide
 import com.example.bismillahjadi.databinding.ItemFavBinding
 import com.example.bismillahjadi.room.MovieFavorit
 
-class FavoritAdapter (val moviefav: List <MovieFavorit>) : RecyclerView.Adapter<FavoritAdapter.ViewHolder>() {
+@Suppress("RedundantSuppression")
+class FavoritAdapter (private val moviefav: List <MovieFavorit>) : RecyclerView.Adapter<FavoritAdapter.ViewHolder>() {
 
     class ViewHolder(var binding :ItemFavBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -21,6 +22,7 @@ class FavoritAdapter (val moviefav: List <MovieFavorit>) : RecyclerView.Adapter<
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.tvTitle.text = moviefav[position].title
         holder.binding.tvDate.text = moviefav[position].date
+
         Glide.with(holder.itemView)
             .load("https://image.tmdb.org/t/p/w780${moviefav[position].image}")
             .into(holder.binding.imgView)

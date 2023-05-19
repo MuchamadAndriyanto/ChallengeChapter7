@@ -24,7 +24,9 @@ class MovieTopAdapter(private var listMovieTop : List<Result>) : RecyclerView.Ad
     override fun onBindViewHolder(holder: MovieTopAdapter.ViewHolder, position: Int) {
         holder.binding.tvTitle.text = listMovieTop[position].title
         holder.binding.tvDate.text = listMovieTop[position].releaseDate
-        Glide.with(holder.itemView).load("https://image.tmdb.org/t/p/w780${listMovieTop[position].backdropPath}").into(holder.binding.imgView)
+
+        Glide.with(holder.itemView).load("https://image.tmdb.org/t/p/w780${listMovieTop[position].backdropPath}")
+            .into(holder.binding.imgView)
 
         holder.binding.detailToprated.setOnClickListener {
             val id = listMovieTop[position].id

@@ -5,8 +5,7 @@ import androidx.room.RoomDatabase
 
 
 @Database(
-    entities = [MovieFavorit::class],
-    version = 1
+    entities = [MovieFavorit::class],version = 1
 )
 
 abstract class FavoritDatabase : RoomDatabase() {
