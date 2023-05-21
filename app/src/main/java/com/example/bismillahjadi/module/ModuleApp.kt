@@ -26,4 +26,5 @@ class ModuleApp {
     fun provideFavoriteDao(database:FavoritDatabase):FavoritDao {
         return database.favoritDao()
     }
+
 }

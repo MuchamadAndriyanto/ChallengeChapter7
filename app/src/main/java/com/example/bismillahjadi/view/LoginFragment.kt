@@ -69,7 +69,7 @@ class LoginFragment : Fragment() {
         if (email.isNotEmpty() && password.isNotEmpty()){
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful){
-                    Toast.makeText(context,"Login Telah Berhasil", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context,"Anda Berhasil Login", Toast.LENGTH_LONG).show()
                     Navigation.findNavController(binding.root).navigate(R.id.action_loginFragment_to_homeFragment)
                 }else{
                     Toast.makeText(context, "Email atau Password Kamu Ada Yang Salah",Toast.LENGTH_LONG).show()
@@ -93,6 +93,7 @@ class LoginFragment : Fragment() {
         requireActivity().startActivity(intent)
 
     }
+    @SuppressLint("AppBundleLocaleChanges")
     private fun setEnglish(ignoredEnglish: String) {
         val locale : Locale = Locale("eng")
         Locale.setDefault(locale)

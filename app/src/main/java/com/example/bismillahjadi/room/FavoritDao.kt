@@ -1,6 +1,5 @@
 package com.example.bismillahjadi.room
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -13,11 +12,11 @@ import androidx.room.Query
 interface FavoritDao {
 
     @Query("SELECT * FROM MovieFavorit")
-    fun getAllMovieFavorit() : LiveData<List<MovieFavorit>>
-
+    fun getAllMovieFavorit() : List<MovieFavorit>
     @Insert
-    suspend fun insertFilmFavorit(filmFavorites: MovieFavorit)
-
+    suspend fun addToFavorit(favoritMovie : MovieFavorit) : Long
+    @Query("SELECT count(*) FROM MovieFavorit WHERE MovieFavorit.id = :id")
+    fun checkMovie(id: Int) : Int
     @Delete
     suspend fun deleteFilmFavorit(filmFavorites: MovieFavorit) : Int
 

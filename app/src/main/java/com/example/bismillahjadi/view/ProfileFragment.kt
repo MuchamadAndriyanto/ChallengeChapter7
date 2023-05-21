@@ -33,7 +33,11 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         sharedpref = requireActivity().getSharedPreferences("Register", Context.MODE_PRIVATE)
+
+        val getUser = sharedpref.getString("username", "")
+        binding.usernameUpdateText.setText(getUser)
 
 
         binding.btnUpdate.setOnClickListener {
@@ -44,13 +48,15 @@ class ProfileFragment : Fragment() {
             upusername.apply()
             firebaseAuth = FirebaseAuth.getInstance()
             firebaseAuth.signOut()
-            Toast.makeText(context, "Update Data Berhasil", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Update Username Berhasil", Toast.LENGTH_SHORT).show()
             Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_homeFragment)
         }
 
         binding.btnLogout.setOnClickListener {
             firebaseAuth = FirebaseAuth.getInstance()
             firebaseAuth.signOut()
+            val addUser = sharedpref.edit()
+            addUser.apply()
             Toast.makeText(context, "Anda Berhasil Logout", Toast.LENGTH_SHORT).show()
             Navigation.findNavController(binding.root).navigate(R.id.action_profileFragment_to_loginFragment)
         }

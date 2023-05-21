@@ -17,6 +17,8 @@ data class MovieFavorit(
     @ColumnInfo(name = "date")
     var date: String,
     @ColumnInfo(name = "image")
-    var image : String
+    var image : String,
+    @ColumnInfo(name = "overview")
+    var overview: String
 
 ): Parcelable
