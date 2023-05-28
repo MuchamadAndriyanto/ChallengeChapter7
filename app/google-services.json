@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:473073040693:android:bfccc94641a83c4993e07c",
         "android_client_info": {
-          "package_name": "com.example.bismillahjadi.login"
+          "package_name": "com.example.bismillahjadi.loginred"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "473073040693-fn13nk453tgpbd7fc2tph2kf9cea6hc6.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.bismillahjadi.login",
+            "package_name": "com.example.bismillahjadi.loginred",
             "certificate_hash": "1d0bfa9032581c81a530f450736a735e29830378"
           }
         },

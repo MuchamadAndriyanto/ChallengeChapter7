@@ -22,10 +22,19 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     flavorDimensions("movie")
     productFlavors {
-        login {
-            applicationIdSuffix ".login"
+        loginbiru{
+            applicationIdSuffix ".loginbiru"
+            dimension "movie"
+        }
+        loginyellow{
+            applicationIdSuffix ".loginyellow"
+            dimension "movie"
+        }
+        loginred{
+            applicationIdSuffix ".loginred"
             dimension "movie"
         }
     }
