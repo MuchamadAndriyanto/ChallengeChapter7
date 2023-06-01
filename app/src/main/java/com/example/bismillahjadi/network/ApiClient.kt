@@ -18,7 +18,6 @@ import javax.inject.Singleton
 @Suppress("SpellCheckingInspection")
 @Module
 @InstallIn(SingletonComponent::class)
-
 object ApiClient {
     private const val  BASE_URL ="https://api.themoviedb.org/"
 
@@ -30,7 +29,7 @@ object ApiClient {
             }
         }
 
-    private val clint = OkHttpClient.Builder().addInterceptor(logging).build()
+    val clint = OkHttpClient.Builder().addInterceptor(logging).build()
 
     @Singleton
     @Provides

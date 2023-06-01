@@ -26,9 +26,9 @@ import java.util.Locale
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
 
-    private lateinit var binding: FragmentLoginBinding
+    lateinit var binding: FragmentLoginBinding
     private lateinit var sharedpref: SharedPreferences
-    private lateinit var firebaseAuth: FirebaseAuth
+    lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,7 +62,7 @@ class LoginFragment : Fragment() {
 
     }
 
-    private fun login(){
+    fun login(){
         val email = binding.emailEditText.text.toString()
         val password = binding.passwordEdiText.text.toString()
 

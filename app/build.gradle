@@ -37,6 +37,14 @@ android {
             applicationIdSuffix ".loginred"
             dimension "movie"
         }
+        registerbiru{
+            applicationIdSuffix ".registerbiru"
+            dimension "movie"
+        }
+        registerred{
+            applicationIdSuffix ".registerred"
+            dimension "movie"
+        }
     }
 
     buildTypes {
@@ -64,12 +72,42 @@ android {
 
 dependencies {
 
+    implementation 'com.squareup.okhttp3:okhttp:<version>'
+    implementation 'com.squareup.okhttp3:logging-interceptor:<version>'
+    implementation 'com.squareup.retrofit2:retrofit:<version>'
+    implementation 'com.squareup.retrofit2:converter-gson:<version>'
+
+    // Dependensi untuk testing
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.mockito:mockito-core:3.11.2")
+    
+    // OkHttp MockWebServer
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.9.1'
+
+    // Retrofit Gson Converter
+    testImplementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // OkHttp Logging Interceptor
+    testImplementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
+
+    implementation 'androidx.test:core-ktx:1.4.0'
+    implementation 'androidx.test.ext:junit-ktx:1.1.5'
+
+
+    // JUnit 4
+    testImplementation 'junit:junit:4.13.2'
+
+    // Mockito
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+
     implementation "androidx.fragment:fragment-ktx"
 
     //data store
     implementation "androidx.datastore:datastore-preferences:1.0.0"
 
     implementation "com.google.dagger:hilt-android:2.45"
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
     kapt "com.google.dagger:hilt-android-compiler:2.45"
 
     //retrofit

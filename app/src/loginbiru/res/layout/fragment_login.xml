@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/biru"
     tools:context=".view.LoginFragment"
     tools:ignore="Overdraw">
 
@@ -13,11 +12,12 @@
         android:id="@+id/ivImage"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="106dp"
-        android:src="@drawable/baseline_favorite_24"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="100dp"
+        android:src="@drawable/baseline_directions_bike_24_bir"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -103,7 +103,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/yellow"
+        android:backgroundTint="@color/biru"
         android:text="@string/Login"
         app:layout_constraintBottom_toTopOf="@+id/btnReg"
         app:layout_constraintEnd_toEndOf="parent"
