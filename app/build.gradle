@@ -25,24 +25,24 @@ android {
 
     flavorDimensions("movie")
     productFlavors {
-        loginbiru{
-            applicationIdSuffix ".loginbiru"
+        logina{
+            applicationIdSuffix ".logina"
             dimension "movie"
         }
-        loginyellow{
-            applicationIdSuffix ".loginyellow"
+        loginb{
+            applicationIdSuffix ".loginb"
             dimension "movie"
         }
-        loginred{
-            applicationIdSuffix ".loginred"
+        loginc{
+            applicationIdSuffix ".loginc"
             dimension "movie"
         }
-        registerbiru{
-            applicationIdSuffix ".registerbiru"
+        registera{
+            applicationIdSuffix ".registera"
             dimension "movie"
         }
-        registerred{
-            applicationIdSuffix ".registerred"
+        registerb{
+            applicationIdSuffix ".registerb"
             dimension "movie"
         }
     }
@@ -72,10 +72,20 @@ android {
 
 dependencies {
 
-    implementation 'com.squareup.okhttp3:okhttp:<version>'
-    implementation 'com.squareup.okhttp3:logging-interceptor:<version>'
-    implementation 'com.squareup.retrofit2:retrofit:<version>'
-    implementation 'com.squareup.retrofit2:converter-gson:<version>'
+    //mockito
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+    testImplementation 'org.mockito:mockito-inline:3.12.4'
+    testImplementation "androidx.arch.core:core-testing:2.1.0" // InstantTaskExecutorRule
+    testImplementation "androidx.arch.core:core-testing:2.1.0" // InstantTaskExecutorRule
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
+
+    //special testing
+    testImplementation "androidx.arch.core:core-testing:2.1.0" // InstantTaskExecutorRule
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1" //TestDispatcher
+
+    //special instrumentation testing
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0" // InstantTaskExecutorRule
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4" //TestDispatcher
 
     // Dependensi untuk testing
     testImplementation("junit:junit:4.13.2")
