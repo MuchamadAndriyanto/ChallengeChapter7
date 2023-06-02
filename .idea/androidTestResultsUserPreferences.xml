@@ -3,13 +3,29 @@
   <component name="AndroidTestResultsUserPreferences">
     <option name="androidTestResultsTableState">
       <map>
+        <entry key="-304502967">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="192.168.127.109:5555" value="120" />
+                  <entry key="Duration" value="90" />
+                  <entry key="Genymobile&#10; Galaxy S7" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="1740027618">
           <value>
             <AndroidTestResultsTableState>
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="192.168.127.107:5555" value="120" />
+                  <entry key="192.168.127.109:5555" value="120" />
                   <entry key="Duration" value="90" />
+                  <entry key="Genymobile&#10; Galaxy S7" value="120" />
                   <entry key="Genymobile&#10; Pixel 3a" value="120" />
                   <entry key="Tests" value="360" />
                 </map>

@@ -25,24 +25,16 @@ android {
 
     flavorDimensions("movie")
     productFlavors {
-        logina{
-            applicationIdSuffix ".logina"
+        moviea{
+            applicationIdSuffix ".moviea"
             dimension "movie"
         }
-        loginb{
-            applicationIdSuffix ".loginb"
+        movieb{
+            applicationIdSuffix ".movieb"
             dimension "movie"
         }
-        loginc{
-            applicationIdSuffix ".loginc"
-            dimension "movie"
-        }
-        registera{
-            applicationIdSuffix ".registera"
-            dimension "movie"
-        }
-        registerb{
-            applicationIdSuffix ".registerb"
+        moviec{
+            applicationIdSuffix ".moviec"
             dimension "movie"
         }
     }

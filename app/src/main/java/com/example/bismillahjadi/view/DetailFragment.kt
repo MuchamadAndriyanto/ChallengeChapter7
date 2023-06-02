@@ -63,11 +63,11 @@ class DetailFragment : Fragment() {
         val imagepath = list.imagepath
         val id = list.id
 
-        binding.tvNamaMovie.text = title
+        binding.tvTitle.text = title
         binding.tvDate.text = date
-        binding.tvOverview.text = overview
+        binding.tvDeesc.text = overview
         Glide.with(view.context).load("https://image.tmdb.org/t/p/w780${imagepath}")
-            .into(binding.ivDetailGambar)
+            .into(binding.imagepath)
 
 
         binding.tbFav.setOnClickListener {

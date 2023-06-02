@@ -16,7 +16,7 @@
         android:layout_marginTop="153dp"
         android:layout_marginEnd="100dp"
         android:text="MovieFlik"
-        android:textColor="@color/purple_200"
+        android:textColor="@color/purple_700"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,8 +56,9 @@
         app:hintEnabled="true"
         android:hint="@string/Input_Email"
         app:endIconMode="clear_text"
-        app:boxStrokeColor="@color/purple_200"
-        app:hintTextColor="@color/purple_200"
+        app:boxStrokeColor="@color/purple_700"
+        app:hintTextColor="@color/purple_700"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +71,7 @@
             android:inputType="textPersonName"
             android:maxLines="1"
             android:singleLine="true"
-            android:textColor="@android:color/holo_purple" />
+            android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -82,8 +83,9 @@
         android:layout_marginEnd="16dp"
         app:hintEnabled="true"
         android:hint="@string/Input_Password"
-        app:boxStrokeColor="@color/purple_200"
-        app:hintTextColor="@color/purple_200"
+        app:boxStrokeColor="@color/purple_700"
+        app:hintTextColor="@color/purple_700"
+        android:backgroundTint="@color/white"
         app:endIconMode="password_toggle"
         app:layout_constraintTop_toBottomOf="@+id/inputEmail"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +95,8 @@
             android:id="@+id/passwordEdiText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/white"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -104,7 +107,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/purple_200"
+        android:backgroundTint="@color/purple_700"
         android:text="@string/Login"
         app:layout_constraintBottom_toTopOf="@+id/btnReg"
         app:layout_constraintEnd_toEndOf="parent"
@@ -121,7 +124,7 @@
         android:layout_marginEnd="100dp"
         android:gravity="center_horizontal"
         android:text="Don't have an account yet? Click here"
-        android:textColor="@color/purple_200"
+        android:textColor="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnLogin" />

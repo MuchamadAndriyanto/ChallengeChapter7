@@ -5,21 +5,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/signup_screen"
+    android:background="@color/backgor"
     tools:context=".view.RegisterFragment"
     tools:ignore="Overdraw">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="100dp"
+        android:text="MovieFlik"
+        android:textColor="@color/red"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="290dp"
+        android:layout_marginTop="200dp"
         android:layout_marginHorizontal="16dp"
         app:hintEnabled="true"
         android:hint="@string/Username"
         app:endIconMode="clear_text"
-        app:boxStrokeColor="@color/yellow"
-        app:hintTextColor="@color/yellow"
+        app:boxStrokeColor="@color/red"
+        app:hintTextColor="@color/red"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +47,7 @@
             android:inputType="textPersonName"
             android:maxLines="1"
             android:singleLine="true"
-            android:textColor="@android:color/black" />
+            android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -46,8 +61,9 @@
         app:hintEnabled="true"
         android:hint="@string/Email"
         app:endIconMode="clear_text"
-        app:boxStrokeColor="@color/yellow"
-        app:hintTextColor="@color/yellow"
+        app:boxStrokeColor="@color/red"
+        app:hintTextColor="@color/red"
+        android:backgroundTint="@color/white"
         app:layout_constraintTop_toBottomOf="@id/inputUsername"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -59,7 +75,7 @@
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:singleLine="true"
-            android:textColor="@android:color/black" />
+            android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -71,8 +87,9 @@
         android:layout_marginEnd="16dp"
         app:hintEnabled="true"
         android:hint="@string/Password"
-        app:boxStrokeColor="@color/yellow"
-        app:hintTextColor="@color/yellow"
+        app:boxStrokeColor="@color/red"
+        app:hintTextColor="@color/red"
+        android:backgroundTint="@color/white"
         app:endIconMode="password_toggle"
         app:layout_constraintTop_toBottomOf="@+id/inputEmail"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,7 +99,8 @@
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/white"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -94,8 +112,9 @@
         android:layout_marginEnd="16dp"
         app:hintEnabled="true"
         android:hint="@string/Password_Confirmation"
-        app:boxStrokeColor="@color/yellow"
-        app:hintTextColor="@color/yellow"
+        app:boxStrokeColor="@color/red"
+        app:hintTextColor="@color/red"
+        android:backgroundTint="@color/white"
         app:endIconMode="password_toggle"
         app:layout_constraintTop_toBottomOf="@+id/inputPassword"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,7 +124,8 @@
             android:id="@+id/confirmasiEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/white"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -114,7 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="10dp"
-        android:backgroundTint="@color/yellow"
+        android:backgroundTint="@color/red"
         android:enabled="true"
         android:text="@string/Register"
         app:layout_constraintBottom_toBottomOf="parent"
