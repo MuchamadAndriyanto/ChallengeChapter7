@@ -6,6 +6,7 @@
     app:cardCornerRadius="15dp"
     android:layout_margin="20dp"
     android:id="@+id/detail_toprated"
+    app:cardBackgroundColor="@color/backgor"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -28,6 +29,7 @@
             android:id="@+id/tvTitle"
             android:layout_marginTop="10dp"
             android:text="Judul"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -35,6 +37,7 @@
             android:id="@+id/tvDate"
             android:layout_marginTop="10dp"
             android:text="Tanggal"
+            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
