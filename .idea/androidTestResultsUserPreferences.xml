@@ -11,7 +11,9 @@
                   <entry key="192.168.127.109:5555" value="120" />
                   <entry key="Duration" value="90" />
                   <entry key="Genymobile&#10; Galaxy S7" value="120" />
+                  <entry key="IZCMMBFYYLUWCAMN" value="120" />
                   <entry key="Tests" value="360" />
+                  <entry key="Xiaomi&#10; M2101K7BNY" value="120" />
                 </map>
               </option>
             </AndroidTestResultsTableState>
@@ -27,7 +29,9 @@
                   <entry key="Duration" value="90" />
                   <entry key="Genymobile&#10; Galaxy S7" value="120" />
                   <entry key="Genymobile&#10; Pixel 3a" value="120" />
+                  <entry key="IZCMMBFYYLUWCAMN" value="120" />
                   <entry key="Tests" value="360" />
+                  <entry key="Xiaomi&#10; M2101K7BNY" value="120" />
                 </map>
               </option>
             </AndroidTestResultsTableState>
